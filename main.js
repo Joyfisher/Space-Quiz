@@ -1,26 +1,26 @@
 (function() {
   var questions = [{
-    question: "What is 2*5?",
-    choices: [2, 5, 10, 15, 20],
+    question: "What is the largest Planet in our Solar System?",
+    choices: ["Mars", "Saturn", "Jupiter", "Venus", "Earth"],
     correctAnswer: 2
-  }, {
-    question: "What is 3*6?",
-    choices: [3, 6, 9, 12, 18],
-    correctAnswer: 4
-  }, {
-    question: "What is 8*9?",
-    choices: [72, 99, 108, 134, 156],
+  },  {
+    question: "What was the first space craft to fly through Saturns Rings?",
+    choices: ["Cassini", "New Horizons", "Apollo 11", "Rover 1", "I,S,S" ],
     correctAnswer: 0
   }, {
-    question: "What is 1*7?",
-    choices: [4, 5, 6, 7, 8],
+    question: "What is the hottest Planet in our Solar System?",
+    choices: ["Mercury", "Neptune", "Venus", "Mars", "Jupiter"],
+    correctAnswer: 2
+  }, {
+    question: "What decade did the first sucessful rover transmit data from Mars",
+    choices: ["80's", "60's", "40's", "70's", "90's"],
     correctAnswer: 3
   }, {
-    question: "What is 8*8?",
-    choices: [20, 30, 40, 50, 64],
-    correctAnswer: 4
+    question: "What is the name of the first private company to relaunch a used rocket into Space?",
+    choices: ["Nasa", "Space X", "E,S,A", "Space A", "Relaunch"],
+    correctAnswer: 1
   }];
-  
+
   var questionCounter = 0; //Tracks question number
   var selections = []; //Array containing user choices
   var quiz = $('#quiz'); //Quiz div object
@@ -40,7 +40,7 @@
     
     // If no user selection, progress is stopped
     if (isNaN(selections[questionCounter])) {
-      alert('Please make a selection!');
+      alert("You haven't selected an answer!");
     } else {
       questionCounter++;
       displayNext();
@@ -150,7 +150,7 @@
   }
   
   // Computes score and returns a paragraph element to be displayed
-  function displayScore() {
+function displayScore() {
     var score = $('<p>',{id: 'question'});
     
     var numCorrect = 0;
